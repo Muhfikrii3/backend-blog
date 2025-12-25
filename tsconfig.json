@@ -1,0 +1,58 @@
+{
+	"compilerOptions": {
+		// Environment Settings
+		"target": "ES2022",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"lib": ["ES2022"],
+		"types": ["node"],
+
+		// File Layout
+		"rootDir": ".",
+		"outDir": "./dist",
+
+		// Module Resolution
+		"esModuleInterop": true,
+		"resolveJsonModule": true,
+		"allowSyntheticDefaultImports": true,
+
+		// Type Checking
+		"strict": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"strictFunctionTypes": true,
+		"strictBindCallApply": true,
+		"strictPropertyInitialization": false,
+		"noImplicitThis": true,
+		"alwaysStrict": true,
+
+		// Additional Checks
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noImplicitReturns": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedIndexedAccess": true,
+
+		// Output
+		"sourceMap": true,
+		"declaration": true,
+		"declarationMap": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+
+		// Interop
+		"allowJs": false,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"verbatimModuleSyntax": false,
+		"isolatedModules": true
+	},
+	"include": ["src/**/*", "src/lib/**/*"],
+	"exclude": ["node_modules", "dist"],
+	"ts-node": {
+		"transpileOnly": true,
+		"files": true,
+		"experimentalSpecifierResolution": "node",
+		"esm": true
+	}
+}
