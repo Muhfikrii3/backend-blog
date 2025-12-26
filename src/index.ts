@@ -4,6 +4,8 @@ import { clerkMiddleware } from "@clerk/express";
 import cors from "cors";
 import "dotenv/config";
 import { env } from "prisma/config";
+import webhookRouter from "./routes/webhook.router.js";
+import userRouter from "./routes/user.router.js";
 
 const app = express();
 const PORT = env("PORT") || 3000;
@@ -17,6 +19,7 @@ app.use(
 );
 
 app.use(clerkMiddleware());
+app.use("/webhooks", webhookRouter);
 app.use(express.json());
 
 app.use((_req, res, next) => {
@@ -31,6 +34,8 @@ app.use((_req, res, next) => {
 	);
 	next();
 });
+
+app.use("/users", userRouter);
 
 app.use(
 	(
