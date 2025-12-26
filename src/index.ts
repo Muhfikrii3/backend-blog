@@ -6,6 +6,8 @@ import "dotenv/config";
 import { env } from "prisma/config";
 import webhookRouter from "./routes/webhook.router.js";
 import userRouter from "./routes/user.router.js";
+import postRouter from "./routes/post.router.js";
+import commentRouter from "./routes/comment.router.js";
 
 const app = express();
 const PORT = env("PORT") || 3000;
@@ -36,6 +38,8 @@ app.use((_req, res, next) => {
 });
 
 app.use("/users", userRouter);
+app.use("/posts", postRouter);
+app.use("/comments", commentRouter);
 
 app.use(
 	(
